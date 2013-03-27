@@ -2,11 +2,11 @@
 
 ## Getting Started
 
-- git clone https://github.com/cacois/node-express-twitter-bootstrap.git
+- git clone https://github.com/PaulUpson/node-express-twitter-bootstrap.git
 - cd node-express-twitter-bootstrap
-- npm install express ejs ejs-locals
-- node server.js
+- npm install // the package.json will take care of the dependencies
+- node app
 
 ## Changelog:
 
-### v.0.2 : October 15th, 2012
+### v.0.3 : March 27th, 2013

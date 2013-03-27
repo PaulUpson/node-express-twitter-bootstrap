@@ -6,7 +6,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , ejs = require('ejs-locals');
-  // , FB = require('fb');
+
 var app = express();
 app.engine('ejs', ejs);
 
@@ -32,7 +32,6 @@ app.configure(function(){
 
 app.configure('development', function(){
    app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
-    // app.use(express.logger({ format: ':method :url' }));
 });
 
 app.configure('production', function(){
@@ -46,7 +45,7 @@ app.configure('production', function(){
 var locals = {
         title:       'Node | Express | EJS | Boostrap',
         description: 'A Node.js applicaton bootstrap using Express 3.x, EJS, Twitter Bootstrap, and CSS3',
-        author:      'C. Aaron Cois, Alexandre Collin',
+        author:      'Paul Upson',
         _layoutFile: true
     };
 
@@ -55,6 +54,11 @@ app.get('/', function (req, res) {
 
     res.render('home.ejs', locals);
 
+});
+
+/* The 404 Route (ALWAYS Keep this as the last route) */
+app.get('/*', function(req, res){
+    res.render('404.ejs', locals);
 });
 
 http.createServer(app).listen(app.get('port'), function(){
