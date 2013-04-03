@@ -8,3 +8,7 @@ node_modules/
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# WebMatrix files #
+###################
+web.config
